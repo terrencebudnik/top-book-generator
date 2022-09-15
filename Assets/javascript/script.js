@@ -110,8 +110,3 @@ var baseURL = "http://gutendex.com/books/?topic="+topicChoice;
 });
  
 })
-
-
-
-
-
