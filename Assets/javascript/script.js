@@ -4,6 +4,13 @@ var data;
 
 
 
+searchGenrebtn.on("click", function (e) {
+    e.preventDefault();
+    var genreChoice = userInput.val();
+    location.replace(`./searchresults.html?genre=${genreChoice}`);
+})
+
+
 // changing the value of thext area
 // $('#textarea1').val('New Text');
 // M.textareaAutoResize($('#textarea1'));
