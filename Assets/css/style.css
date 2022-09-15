@@ -1,21 +1,21 @@
-h1 {
+ h1 {
     background-color: black;
     color: white
 }
 
-/* Sticky Footer */
-body {
+Sticky Footer */
+ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
     background-image: url(./);
-  }
+  } 
 
-main {
+ main {
     flex: 1 0 auto;
-  }
+  } 
 
-/*  */
+ 
 #background body {
     background-image: url(./Assets/Images/Bookshelf-light.jpg);
 }
