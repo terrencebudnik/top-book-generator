@@ -27,10 +27,6 @@ fetch(genreURL)
         displayBookoneEl.append(bookOnetitle);
 
 
-        var bookOneimage = $('<img>');
-        bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
-        bookOnetitle.append(bookOneimage);
-
         var bookOnebodyEl = $('<p>');
         bookOnebodyEl.attr('class', 'card-content');
         bookOnebodyEl.text(data.results[0].authors[0].name)
