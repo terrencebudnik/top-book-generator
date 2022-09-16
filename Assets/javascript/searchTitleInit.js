@@ -2,14 +2,12 @@ var queryString = window.location.search
 console.log(queryString);
 
 var urlParams = new URLSearchParams(queryString);
-var genreParam = urlParams.get('genre');
+var titleParam = urlParams.get('title');
 console.log(urlParams);
-console.log(genreParam);
-var baseURL = "http://gutendex.com/books/?topic=" + genreParam;
+console.log(titleParam);
+var titleURL = "http://gutendex.com/books/?search=" + titleParam;
 
-var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
-
-fetch(generURL)
+fetch(titleURL)
     .then(function (response) {
         return response.json();
     })
@@ -27,9 +25,9 @@ fetch(generURL)
         displayBookoneEl.append(bookOnetitle);
 
 
-        var bookOneimage = $('<img>');
-        bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
-        bookOnetitle.append(bookOneimage);
+        // var bookOneimage = $('<img>');
+        // bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
+        // bookOnetitle.append(bookOneimage);
 
         var bookOnebodyEl = $('<p>');
         bookOnebodyEl.attr('class', 'card-content');
