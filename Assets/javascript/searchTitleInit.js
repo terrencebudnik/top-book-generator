@@ -2,12 +2,12 @@ var queryString = window.location.search
 console.log(queryString);
 
 var urlParams = new URLSearchParams(queryString);
-var authorParam = urlParams.get('author');
+var titleParam = urlParams.get('title');
 console.log(urlParams);
-console.log(authorParam);
-var authorURL = "http://gutendex.com/books/?search=" + authorParam;
+console.log(titleParam);
+var titleURL = "http://gutendex.com/books/?search=" + titleParam;
 
-fetch(authorURL)
+fetch(titleURL)
     .then(function (response) {
         return response.json();
     })
