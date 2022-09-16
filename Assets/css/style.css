@@ -8,15 +8,35 @@
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url(./);
   } 
 
  main {
     flex: 1 0 auto;
   } 
-
  
-#background body {
-    background-image: url(./Assets/Images/Bookshelf-light.jpg);
+
+  body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .bg {
+    /* The image used */
+    background-image: url(../Images/Books.jpeg);
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+#welcome-box {
+  color:white;
 }
 
+nav, .page-footer {
+  background-color: #a6192e;
+}

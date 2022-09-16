@@ -5,12 +5,9 @@ var urlParams = new URLSearchParams(queryString);
 var genreParam = urlParams.get('genre');
 console.log(urlParams);
 console.log(genreParam);
-<<<<<<< HEAD
 var baseURL = "http://gutendex.com/books/?topic=" + genreParam;
-//http://gutendex.com/books/?search=" + titleParam
-=======
+
 var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
->>>>>>> 1b2393b204503f63673cc23c1ad2d9c599f1995c
 
 fetch(generURL)
     .then(function (response) {
