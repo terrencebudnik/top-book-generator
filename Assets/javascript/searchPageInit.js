@@ -6,6 +6,7 @@ var genreParam = urlParams.get('genre');
 console.log(urlParams);
 console.log(genreParam);
 var baseURL = "http://gutendex.com/books/?topic=" + genreParam;
+//http://gutendex.com/books/?search=" + titleParam
 
 fetch(baseURL)
     .then(function (response) {

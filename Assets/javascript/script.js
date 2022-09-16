@@ -24,3 +24,4 @@ searchGenrebtn.on("click", function (e) {
 
 
 
+// create event listener for title button 
