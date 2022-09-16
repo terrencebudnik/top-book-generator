@@ -1,3 +1,4 @@
+
 var searchGenrebtn = $('#searchGenrebtn');
 var userInput = $('#userInput');
 var searchAuthorbtn = $('#searchAuthorbtn');
@@ -19,3 +20,4 @@ searchAuthorbtn.on("click", function (e) {
     location.replace(`./searchAuthor.html?search=${authorChoice}`);
 })
 
+// create event listener for title button 
