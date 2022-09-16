@@ -1,9 +1,15 @@
-<<<<<<< HEAD
-=======
+
 var searchGenrebtn = $('#searchGenrebtn');
 var userInput = $('#userInput');
 var data;
 
+
+
+searchGenrebtn.on("click", function (e) {
+    e.preventDefault();
+    var genreChoice = userInput.val();
+    location.replace(`./searchresults.html?genre=${genreChoice}`);
+})
 
 
 // changing the value of thext area
@@ -18,4 +24,3 @@ var data;
 
 
 
->>>>>>> 44cc6174fd7235c744ea44c18c6fb4226de40a29
