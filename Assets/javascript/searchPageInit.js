@@ -2,12 +2,14 @@ var queryString = window.location.search
 console.log(queryString);
 
 var urlParams = new URLSearchParams(queryString);
-var titleParam = urlParams.get('title');
+var genreParam = urlParams.get('genre');
 console.log(urlParams);
-console.log(titleParam);
-var titleURL = "http://gutendex.com/books/?search=" + titleParam;
+console.log(genreParam);
+var baseURL = "http://gutendex.com/books/?topic=" + genreParam;
 
-fetch(titleURL)
+var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
+
+fetch(genreURL)
     .then(function (response) {
         return response.json();
     })
@@ -25,9 +27,9 @@ fetch(titleURL)
         displayBookoneEl.append(bookOnetitle);
 
 
-        // var bookOneimage = $('<img>');
-        // bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
-        // bookOnetitle.append(bookOneimage);
+        var bookOneimage = $('<img>');
+        bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
+        bookOnetitle.append(bookOneimage);
 
         var bookOnebodyEl = $('<p>');
         bookOnebodyEl.attr('class', 'card-content');
@@ -41,7 +43,8 @@ fetch(titleURL)
         bookOnetitle.append(bookOnereadbtn);
 
         var bookOnefavebtn = $('<button>');
-        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
+        // bookOnefavebtn.attr('class', 'card-action favorite-button');
+        bookOnefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
         bookOnefavebtn.text("Add to Your Favorites")
         displayBookoneEl.append(bookOnefavebtn);
 
@@ -66,7 +69,7 @@ fetch(titleURL)
         bookTwotitle.append(bookTworeadbtn);
 
         var bookTwofavebtn = $('<button>');
-        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
+        bookTwofavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
         bookTwofavebtn.text("Add to Your Favorites")
         displayBooktwoEl.append(bookTwofavebtn);
 
@@ -91,13 +94,10 @@ fetch(titleURL)
         bookThreetitle.append(bookThreereadbtn);
 
         var bookThreefavebtn = $('<button>');
-        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
+        bookThreefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
         bookThreefavebtn.text("Add to Your Favorites")
         displayBookthreeEl.append(bookThreefavebtn);
     })
 
-    $(document).on("click", ".favorite-button", function(event) {
-        event.preventDefault();
-        location.replace(`./favorites.html`);
-        localStorage.setItem("favorite-list", favorites);
-    })
+
+

@@ -35,14 +35,14 @@ fetch(authorURL)
         bookOnetitle.append(bookOnebodyEl);
 
         var bookOnereadbtn = $('<a>');
-        bookOnereadbtn.attr('href', "https://www.gutenberg.org/files/"+idOne+"/"+idOne+"-h/"+idOne+"-h.htm");
+        bookOnereadbtn.attr('href', "https://www.gutenberg.org/files/" + idOne + "/" + idOne + "-h/" + idOne + "-h.htm");
         bookOnereadbtn.attr('target', 'blank')
         bookOnereadbtn.text("Read it Now!")
         bookOnetitle.append(bookOnereadbtn);
 
         var bookOnefavebtn = $('<button>');
-        bookOnefavebtn.attr('class', 'card-action');
-        bookOnefavebtn.attr('class', 'waves-effect waves-light btn-small');
+
+        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
         bookOnefavebtn.text("Add to Your Favorites")
         displayBookoneEl.append(bookOnefavebtn);
 
@@ -61,20 +61,20 @@ fetch(authorURL)
         bookTwotitle.append(bookTwobodyEl);
 
         var bookTworeadbtn = $('<a>');
-        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idTwo+"/"+idTwo+"-h/"+idTwo+"-h.htm");
+        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/" + idTwo + "/" + idTwo + "-h/" + idTwo + "-h.htm");
         bookTworeadbtn.attr('target', 'blank')
         bookTworeadbtn.text("Read it Now!")
         bookTwotitle.append(bookTworeadbtn);
 
         var bookTwofavebtn = $('<button>');
-        bookTwofavebtn.attr('class', 'card-action');
-        bookTwofavebtn.attr('class', 'waves-effect waves-light btn-small');
+
+        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
         bookTwofavebtn.text("Add to Your Favorites")
         displayBooktwoEl.append(bookTwofavebtn);
 
 
         var idThree = data.results[2].id
-        
+
         var displayBookthreeEl = $('#displayBookthree');
         var bookThreetitle = $('<h2>');
         bookThreetitle.attr('class', 'card-title');
@@ -87,14 +87,21 @@ fetch(authorURL)
         bookThreetitle.append(bookThreebodyEl);
 
         var bookThreereadbtn = $('<a>');
-        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idThree+"/"+idThree+"-h/"+idThree+"-h.htm");
+        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/" + idThree + "/" + idThree + "-h/" + idThree + "-h.htm");
         bookTworeadbtn.attr('target', 'blank')
         bookThreereadbtn.text("Read it Now!")
         bookThreetitle.append(bookThreereadbtn);
 
         var bookThreefavebtn = $('<button>');
-        bookThreefavebtn.attr('class', 'card-action');
-        bookThreefavebtn.attr('class', 'waves-effect waves-light btn-small');
+
+        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
         bookThreefavebtn.text("Add to Your Favorites")
         displayBookthreeEl.append(bookThreefavebtn);
+    })
+
+
+    $(document).on("click", ".favorite-button", function(event) {
+        event.preventDefault();
+        location.replace(`./favorites.html`);
+        localStorage.setItem("favorite-list", favorites);
     })

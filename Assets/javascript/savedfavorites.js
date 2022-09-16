@@ -1,7 +1,7 @@
-const favorites = document.querySelector("#favorites-list");
+let $favorites = document.querySelector("#favorites-list");
 
 let favorites = 
-    JSON.parse(window.localStorage.getItem(favorites)) || [];
+    JSON.parse(window.localStorage.getItem("favorite-list")) || [];
     console.log(favorites);
 
 for (let i = 0; i < favorites.length; i++) {
