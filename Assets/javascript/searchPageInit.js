@@ -5,7 +5,7 @@ var urlParams = new URLSearchParams(queryString);
 var genreParam = urlParams.get('genre');
 console.log(urlParams);
 console.log(genreParam);
-
+var baseURL = "http://gutendex.com/books/?topic=" + genreParam;
 
 var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
 
@@ -27,19 +27,25 @@ fetch(genreURL)
         displayBookoneEl.append(bookOnetitle);
 
 
+        var bookOneimage = $('<img>');
+        bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
+        bookOnetitle.append(bookOneimage);
+
         var bookOnebodyEl = $('<p>');
         bookOnebodyEl.attr('class', 'card-content');
         bookOnebodyEl.text(data.results[0].authors[0].name)
         bookOnetitle.append(bookOnebodyEl);
 
         var bookOnereadbtn = $('<a>');
-        bookOnereadbtn.attr('href', "https://www.gutenberg.org/files/" + idOne + "/" + idOne + "-h/" + idOne + "-h.htm");
+        bookOnereadbtn.attr('href', "https://www.gutenberg.org/files/"+idOne+"/"+idOne+"-h/"+idOne+"-h.htm");
         bookOnereadbtn.attr('target', 'blank')
         bookOnereadbtn.text("Read it Now!")
         bookOnetitle.append(bookOnereadbtn);
 
         var bookOnefavebtn = $('<button>');
-        bookOnefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button'); bookOnefavebtn.text("Add to Your Favorites")
+        // bookOnefavebtn.attr('class', 'card-action favorite-button');
+        bookOnefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
+        bookOnefavebtn.text("Add to Your Favorites")
         displayBookoneEl.append(bookOnefavebtn);
 
 
@@ -57,18 +63,19 @@ fetch(genreURL)
         bookTwotitle.append(bookTwobodyEl);
 
         var bookTworeadbtn = $('<a>');
-        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/" + idTwo + "/" + idTwo + "-h/" + idTwo + "-h.htm");
+        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idTwo+"/"+idTwo+"-h/"+idTwo+"-h.htm");
         bookTworeadbtn.attr('target', 'blank')
         bookTworeadbtn.text("Read it Now!")
         bookTwotitle.append(bookTworeadbtn);
 
         var bookTwofavebtn = $('<button>');
-        bookTwofavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button'); bookTwofavebtn.text("Add to Your Favorites")
+        bookTwofavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
+        bookTwofavebtn.text("Add to Your Favorites")
         displayBooktwoEl.append(bookTwofavebtn);
 
 
         var idThree = data.results[2].id
-
+        
         var displayBookthreeEl = $('#displayBookthree');
         var bookThreetitle = $('<h2>');
         bookThreetitle.attr('class', 'card-title');
@@ -81,18 +88,16 @@ fetch(genreURL)
         bookThreetitle.append(bookThreebodyEl);
 
         var bookThreereadbtn = $('<a>');
-        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/" + idThree + "/" + idThree + "-h/" + idThree + "-h.htm");
+        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idThree+"/"+idThree+"-h/"+idThree+"-h.htm");
         bookTworeadbtn.attr('target', 'blank')
         bookThreereadbtn.text("Read it Now!")
         bookThreetitle.append(bookThreereadbtn);
 
         var bookThreefavebtn = $('<button>');
-        bookThreefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button'); bookThreefavebtn.text("Add to Your Favorites")
+        bookThreefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
+        bookThreefavebtn.text("Add to Your Favorites")
         displayBookthreeEl.append(bookThreefavebtn);
     })
 
-$(document).on("click", ".favorite-button", function (event) {
-    event.preventDefault();
-    location.replace(`./favorites.html`);
-    localStorage.setItem("favorite-list", favorites);
-})
+
+
