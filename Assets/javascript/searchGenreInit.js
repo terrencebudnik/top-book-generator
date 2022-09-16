@@ -1,3 +1,8 @@
+var favListEl = $("#fav-list");
+let favoriteList = 
+    JSON.parse(window.localStorage.getItem("favorite-list")) || [];
+ 
+
 var queryString = window.location.search
 console.log(queryString);
 
@@ -19,84 +24,42 @@ fetch(genreURL)
         console.log(data);
 
         for (let i = 0; i < 3; i++) {
-        var idOne = data.results[i].id
+        
+        var bookCardEl = $(`<div class="card center-align" style="background-image: url('./Assets/Images/display-book-bg.jpg')">`);
+            
+        var id = data.results[i].id
 
-        var displayBookoneEl = $('#displayBookone');
-        var bookOnetitle = $('<h2>');
-        bookOnetitle.attr('class', 'card-title');
-        bookOnetitle.text(data.results[i].title);
-        displayBookoneEl.append(bookOnetitle);
+        
+        var bookTitleEl = $('<h2>');
+        bookTitleEl.attr('class', 'card-title');
+        bookTitleEl.text(data.results[i].title);
+        bookCardEl.append(bookTitleEl);
 
 
-        var bookOnebodyEl = $('<p>');
-        bookOnebodyEl.attr('class', 'card-content');
-        bookOnebodyEl.text(data.results[i].authors[0].name)
-        bookOnetitle.append(bookOnebodyEl);
+        var bookBodyEl = $('<p>');
+        bookBodyEl.attr('class', 'card-content');
+        bookBodyEl.text(data.results[i].authors[0].name)
+        bookTitleEl.append(bookBodyEl);
 
-        var bookOnereadbtn = $('<a>');
-        bookOnereadbtn.attr('href', "https://www.gutenberg.org/files/" + idOne + "/" + idOne + "-h/" + idOne + "-h.htm");
-        bookOnereadbtn.attr('target', 'blank')
-        bookOnereadbtn.text("Read it Now!")
-        bookOnetitle.append(bookOnereadbtn);
+        var bookReadbtn = $('<a>');
+        bookReadbtn.attr('href', "https://www.gutenberg.org/files/" + id + "/" + id + "-h/" + id + "-h.htm");
+        bookReadbtn.attr('target', 'blank')
+        bookReadbtn.text("Read it Now!")
+        bookTitleEl.append(bookReadbtn);
 
-        var bookOnefavebtn = $('<button>');
+        var bookFavebtn = $('<button>');
 
-        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
-        bookOnefavebtn.text("Add to Your Favorites")
-        bookOnefavebtn.attr("data-title", data.results[i].title);
-        bookOnefavebtn.attr("data-url", "https://www.gutenberg.org/files/"+idOne+"/"+idOne+"-h/"+idOne+"-h.htm")
-        displayBookoneEl.append(bookOnefavebtn);
+        bookFavebtn.attr('class', 'btn-small favorite-button');
+        bookFavebtn.text("Add to Your Favorites")
+        bookFavebtn.attr("data-title", data.results[i].title);
+        bookFavebtn.attr("data-author", data.results[i].authors[0].name);
+        bookFavebtn.attr("data-url", "https://www.gutenberg.org/files/"+id+"/"+id+"-h/"+id+"-h.htm")
+        bookCardEl.append(bookFavebtn);
+
+        favListEl.append(bookCardEl);
 
     }
-        // var idTwo = data.results[1].id
-
-        // var displayBooktwoEl = $('#displayBooktwo');
-        // var bookTwotitle = $('<h2>');
-        // bookTwotitle.attr('class', 'card-title');
-        // bookTwotitle.text(data.results[1].title);
-        // displayBooktwoEl.append(bookTwotitle);
-
-        // var bookTwobodyEl = $('<p>');
-        // bookTwobodyEl.attr('class', 'card-content');
-        // bookTwobodyEl.text(data.results[1].authors[0].name)
-        // bookTwotitle.append(bookTwobodyEl);
-
-
-        // var bookTworeadbtn = $('<a>');
-        // bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idTwo+"/"+idTwo+"-h/"+idTwo+"-h.htm");
-        // bookTworeadbtn.attr('target', 'blank')
-        // bookTworeadbtn.text("Read it Now!")
-        // bookTwotitle.append(bookTworeadbtn);
-
-        // var bookTwofavebtn = $('<button>');
-        // bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
-        // bookTwofavebtn.text("Add to Your Favorites")
-        // displayBooktwoEl.append(bookTwofavebtn);
-
-
-        // var idThree = data.results[2].id
-        
-        // var displayBookthreeEl = $('#displayBookthree');
-        // var bookThreetitle = $('<h2>');
-        // bookThreetitle.attr('class', 'card-title');
-        // bookThreetitle.text(data.results[2].title);
-        // displayBookthreeEl.append(bookThreetitle);
-
-        // var bookThreebodyEl = $('<p>');
-        // bookThreebodyEl.attr('class', 'card-content');
-        // bookThreebodyEl.text(data.results[2].authors[0].name)
-        // bookThreetitle.append(bookThreebodyEl);
-
-        // var bookThreereadbtn = $('<a>');
-        // bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idThree+"/"+idThree+"-h/"+idThree+"-h.htm");
-        // bookTworeadbtn.attr('target', 'blank')
-        // bookThreereadbtn.text("Read it Now!")
-        // bookThreetitle.append(bookThreereadbtn);
-
-        // var bookThreefavebtn = $('<button>');
-        // bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
-        // bookThreefavebtn.text("Add to Your Favorites")
-        // displayBookthreeEl.append(bookThreefavebtn);
+       
 
     })
 
@@ -104,12 +67,13 @@ fetch(genreURL)
     $(document).on("click", ".favorite-button", function(event) {
         event.preventDefault();
 
-        console.log(event.target.dataset.title);
 
         var bookInfo = {
             title: event.target.dataset.title,
+            author: event.target.dataset.author,
+            url: event.target.dataset.url
         }
-        console.log(bookInfo);
+      
 
         favBooksList.push(bookInfo);
 

@@ -14,7 +14,7 @@
 <!---header/nav bar-->
 
 
-<body>
+<body style="padding:20px">
     <header id="header">
         <nav class="nav-extended">
             <div class="nav-wrapper">
@@ -23,6 +23,7 @@
             <div class="nav-content">
                 <ul class="tabs tabs-transparent">
                     <li class="tab"><a href="#genre">Search by Genre</a></li>
+                    <li class="tab"><a href="#title">Search by Title</a></li>
                     <li class="tab"><a href="#author">Search by Author</a></li>
                     <li class="tab disabled"><a href="#favorites">Favorite's list</a></li>
                 </ul>
@@ -51,29 +52,32 @@
     <div class="col s10 m8" id="genre">
         <div class="card blue-grey darken-7">
             <div class="card-content white-text">
-                <h3 class="card-title">Search by genre</h3>
+                <h3 class="card-title">Search by Genre</h3>
                 <p>Check to see if there is a free E-book!</p>
             </div>
             <div class="row">
                 <form class="col s12">
                     <div class="row">
-                        <div class="input-field col l12">
+                        <div class="input-field col-6" style="padding-left:20px">
                             <input placeholder="Search" type="text" id="userInput">
-                            <label for="Search"></label>
+                            <label for="Search"></label></div>
                         </div>
-
+                    <div class="row">
+                        <div class="col-6"  style="padding-left:20px">
                         <button class="btn waves-effect waves-light" type="submit" name="action"
-                            id="searchGenrebtn">Submit
-                            <i class="material-icons right"></i>
-                        </button>
-                    </div>
-            </div>
+                                id="searchGenrebtn">Submit
+                                <i class="material-icons right"></i> </button>
+                        </div>
+                    </div>  
+                     
+                    </div>    
+                </div>
             </form>
         </div>
     </div>
     
      <!---Search Input by Title-->
-    <div class="col s10 m8" id="genre">
+    <div class="col s10 m8" id="title">
         <div class="card blue-grey darken-7">
             <div class="card-content white-text">
                 <h3 class="card-title">Search by Title</h3>
@@ -139,7 +143,7 @@
         </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2014 Copyright Text
+                © 2022 Copyright Text
                 <a class="grey-text text-lighten-4 right" href="./index-staff.html">Staff Picks!</a>
             </div>
         </div>
