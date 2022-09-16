@@ -2,12 +2,14 @@ var queryString = window.location.search
 console.log(queryString);
 
 var urlParams = new URLSearchParams(queryString);
-var authorParam = urlParams.get('author');
+var genreParam = urlParams.get('genre');
 console.log(urlParams);
-console.log(authorParam);
-var authorURL = "http://gutendex.com/books/?search=" + authorParam;
+console.log(genreParam);
 
-fetch(authorURL)
+
+var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
+
+fetch(genreURL)
     .then(function (response) {
         return response.json();
     })
@@ -24,10 +26,6 @@ fetch(authorURL)
         bookOnetitle.text(data.results[0].title);
         displayBookoneEl.append(bookOnetitle);
 
-
-        // var bookOneimage = $('<img>');
-        // bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
-        // bookOnetitle.append(bookOneimage);
 
         var bookOnebodyEl = $('<p>');
         bookOnebodyEl.attr('class', 'card-content');

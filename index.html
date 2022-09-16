@@ -8,7 +8,9 @@
     <!--- Materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="./Assets/css/style.css">
-    <title>Free E-Book Generator</title>
+
+    <title>Free EBooks Generator</title>
+
 </head>
 
 <!---header/nav bar-->
@@ -71,7 +73,32 @@
             </form>
         </div>
     </div>
+    
+     <!---Search Input by Title-->
+    <div class="col s10 m8" id="genre">
+        <div class="card blue-grey darken-7">
+            <div class="card-content white-text">
+                <h3 class="card-title">Search by Title</h3>
+                <p>Check to see if there is a free E-book!</p>
+            </div>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col l12">
+                            <input placeholder="Search" type="text" id="userTitleInput">
+                            <label for="Search"></label>
+                        </div>
 
+                        <button class="btn waves-effect waves-light" type="submit" name="action" id="searchTitlebtn">Submit
+                            <i class="material-icons right"></i>
+                        </button>
+                    </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    
+    
     <!--- Search input by Author-->
     <div class="col s10 m8" id="author">
         <div class="card blue-grey darken-7">
