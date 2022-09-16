@@ -113,3 +113,4 @@ fetch(genreURL)
         localStorage.setItem("favorite-list", JSON.stringify(favBooksList));
         location.replace(`./favorites.html`);
     })
+    
