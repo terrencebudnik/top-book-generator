@@ -2,12 +2,14 @@ var queryString = window.location.search
 console.log(queryString);
 
 var urlParams = new URLSearchParams(queryString);
-var authorParam = urlParams.get('author');
+var genreParam = urlParams.get('genre');
 console.log(urlParams);
-console.log(authorParam);
-var authorURL = "http://gutendex.com/books/?search=" + authorParam;
+console.log(genreParam);
+var baseURL = "http://gutendex.com/books/?topic=" + genreParam;
 
-fetch(authorURL)
+var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
+
+fetch(genreURL)
     .then(function (response) {
         return response.json();
     })
@@ -25,9 +27,9 @@ fetch(authorURL)
         displayBookoneEl.append(bookOnetitle);
 
 
-        // var bookOneimage = $('<img>');
-        // bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
-        // bookOnetitle.append(bookOneimage);
+        var bookOneimage = $('<img>');
+        bookOneimage.attr('src', './Assets/Images/bookshelf-light2.jpg')
+        bookOnetitle.append(bookOneimage);
 
         var bookOnebodyEl = $('<p>');
         bookOnebodyEl.attr('class', 'card-content');
@@ -35,14 +37,14 @@ fetch(authorURL)
         bookOnetitle.append(bookOnebodyEl);
 
         var bookOnereadbtn = $('<a>');
-        bookOnereadbtn.attr('href', "https://www.gutenberg.org/files/" + idOne + "/" + idOne + "-h/" + idOne + "-h.htm");
+        bookOnereadbtn.attr('href', "https://www.gutenberg.org/files/"+idOne+"/"+idOne+"-h/"+idOne+"-h.htm");
         bookOnereadbtn.attr('target', 'blank')
         bookOnereadbtn.text("Read it Now!")
         bookOnetitle.append(bookOnereadbtn);
 
         var bookOnefavebtn = $('<button>');
-
-        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
+        // bookOnefavebtn.attr('class', 'card-action favorite-button');
+        bookOnefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
         bookOnefavebtn.text("Add to Your Favorites")
         displayBookoneEl.append(bookOnefavebtn);
 
@@ -61,20 +63,19 @@ fetch(authorURL)
         bookTwotitle.append(bookTwobodyEl);
 
         var bookTworeadbtn = $('<a>');
-        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/" + idTwo + "/" + idTwo + "-h/" + idTwo + "-h.htm");
+        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idTwo+"/"+idTwo+"-h/"+idTwo+"-h.htm");
         bookTworeadbtn.attr('target', 'blank')
         bookTworeadbtn.text("Read it Now!")
         bookTwotitle.append(bookTworeadbtn);
 
         var bookTwofavebtn = $('<button>');
-
-        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
+        bookTwofavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
         bookTwofavebtn.text("Add to Your Favorites")
         displayBooktwoEl.append(bookTwofavebtn);
 
 
         var idThree = data.results[2].id
-
+        
         var displayBookthreeEl = $('#displayBookthree');
         var bookThreetitle = $('<h2>');
         bookThreetitle.attr('class', 'card-title');
@@ -87,21 +88,16 @@ fetch(authorURL)
         bookThreetitle.append(bookThreebodyEl);
 
         var bookThreereadbtn = $('<a>');
-        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/" + idThree + "/" + idThree + "-h/" + idThree + "-h.htm");
+        bookTworeadbtn.attr('href', "https://www.gutenberg.org/files/"+idThree+"/"+idThree+"-h/"+idThree+"-h.htm");
         bookTworeadbtn.attr('target', 'blank')
         bookThreereadbtn.text("Read it Now!")
         bookThreetitle.append(bookThreereadbtn);
 
         var bookThreefavebtn = $('<button>');
-
-        bookOnefavebtn.attr('class', 'card-action waves-effect waves-light btn-small favorite-button');
+        bookThreefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
         bookThreefavebtn.text("Add to Your Favorites")
         displayBookthreeEl.append(bookThreefavebtn);
     })
 
 
-    $(document).on("click", ".favorite-button", function(event) {
-        event.preventDefault();
-        location.replace(`./favorites.html`);
-        localStorage.setItem("favorite-list", favorites);
-    })
+
