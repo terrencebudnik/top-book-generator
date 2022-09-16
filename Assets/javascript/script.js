@@ -20,4 +20,3 @@ searchAuthorbtn.on("click", function (e) {
     location.replace(`./searchAuthor.html?search=${authorChoice}`);
 })
 
-// create event listener for title button 
