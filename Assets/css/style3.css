@@ -10,10 +10,6 @@
     text-align: center;
 }
 
-/* .container{
-    padding-top: 2px;
-    padding-bottom: 10px;
-} */
 
 .bottom{
     padding-top: 200px;
@@ -26,7 +22,6 @@
     width: 8%;
 }
 
-/* christi's code */
 
 body {
     display: flex;
@@ -45,13 +40,8 @@ main {
   }
 
   .bg {
-    /* The image used */
     background-image: url(../Images/Books.jpeg);
-  
-    /* Full height */
     height: 100%; 
-  
-    /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

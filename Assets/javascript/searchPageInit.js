@@ -43,7 +43,6 @@ fetch(genreURL)
         bookOnetitle.append(bookOnereadbtn);
 
         var bookOnefavebtn = $('<button>');
-        // bookOnefavebtn.attr('class', 'card-action favorite-button');
         bookOnefavebtn.attr('class', 'waves-effect waves-light btn-small favorite-button');
         bookOnefavebtn.text("Add to Your Favorites")
         displayBookoneEl.append(bookOnefavebtn);
