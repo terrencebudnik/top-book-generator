@@ -1,43 +1,42 @@
  h1 {
-    background-color: black;
-    color: white
-}
+   background-color: black;
+   color: white
+ }
 
-/* Sticky Footer */ 
  body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-  } 
+   display: flex;
+   min-height: 100vh;
+   flex-direction: column;
+ }
 
  main {
-    flex: 1 0 auto;
-  } 
- 
+   flex: 1 0 auto;
+ }
 
-  body, html {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .bg {
-    /* The image used */
-    background-image: url(../Images/Books.jpeg);
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
 
-#welcome-box {
-  color:white;
-}
+ body,
+ html {
+   height: 100%;
+   margin: 0;
+ }
 
-nav, .page-footer {
-  background-color: #a6192e;
-}
+ .bg {
+   background-image: url(../Images/Books.jpeg);
+   height: 100%;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+ }
 
+ #welcome-box {
+   color: white;
+ }
+
+ nav,
+ .page-footer {
+   background-color: #a6192e;
+ }
+
+ .card {
+   color: #888F86;
+ }
