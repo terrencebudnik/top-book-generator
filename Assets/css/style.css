@@ -1,12 +1,15 @@
  h1 {
    background-color: black;
-   color: white
+
  }
 
  body {
    display: flex;
    min-height: 100vh;
    flex-direction: column;
+   background-image: url(../Images/Books.jpeg);
+   font-family: Dancing Script, cursive;
+ 
  }
 
  main {
@@ -20,13 +23,13 @@
    margin: 0;
  }
 
- .bg {
+ /* .bg {
    background-image: url(../Images/Books.jpeg);
    height: 100%;
    background-position: center;
    background-repeat: no-repeat;
    background-size: cover;
- }
+ } */
 
  #welcome-box {
    color: white;
