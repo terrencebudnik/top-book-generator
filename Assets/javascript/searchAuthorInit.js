@@ -2,14 +2,12 @@ var favListEl = $("#fav-list");
 let favoriteList = 
     JSON.parse(window.localStorage.getItem("favorite-list")) || [];
 
-var queryString = window.location.search
-console.log(queryString);
+var queryString = window.location.search;
 
 var urlParams = new URLSearchParams(queryString);
 var authorParam = urlParams.get('author');
 var favBooksList = JSON.parse(localStorage.getItem("favorite-list")) || [];
-console.log(urlParams);
-console.log(authorParam);
+
 var authorURL = "http://gutendex.com/books/?search=" + authorParam;
 
 fetch(authorURL)
@@ -18,7 +16,7 @@ fetch(authorURL)
 })
 
 .then(function (data) {
-    console.log(data);
+  
 
     for (let i = 0; i < 3; i++) {
     
@@ -63,16 +61,16 @@ fetch(authorURL)
     $(document).on("click", ".favorite-button", function(event) {
         event.preventDefault();
 
-        console.log(event.target.dataset.title);
 
         var bookInfo = {
             title: event.target.dataset.title,
+            author: event.target.dataset.author,
+            url: event.target.dataset.url
         }
-        console.log(bookInfo);
+   
 
         favBooksList.push(bookInfo);
 
         localStorage.setItem("favorite-list", JSON.stringify(favBooksList));
-        location.replace(`./favorites.html`);
 
     })

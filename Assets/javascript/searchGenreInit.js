@@ -4,13 +4,10 @@ let favoriteList =
  
 
 var queryString = window.location.search
-console.log(queryString);
 
 var urlParams = new URLSearchParams(queryString);
 var genreParam = urlParams.get('genre');
 var favBooksList = JSON.parse(localStorage.getItem("favorite-list")) || [];
-console.log(urlParams);
-console.log(genreParam);
 
 
 var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
@@ -21,7 +18,7 @@ fetch(genreURL)
     })
 
     .then(function (data) {
-        console.log(data);
+  
 
         for (let i = 0; i < 3; i++) {
         
@@ -78,7 +75,6 @@ fetch(genreURL)
         favBooksList.push(bookInfo);
 
         localStorage.setItem("favorite-list", JSON.stringify(favBooksList));
-        location.replace(`./favorites.html`);
 
     })
     
