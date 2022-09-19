@@ -9,7 +9,7 @@ var urlParams = new URLSearchParams(queryString);
 var titleParam = urlParams.get('title');
 var favBooksList = JSON.parse(localStorage.getItem("favorite-list")) || [];
 
-var titleURL = "http://gutendex.com/books/?search=" + titleParam;
+var titleURL = "https://gutendex.com/books/?search=" + titleParam;
 
 fetch(titleURL)
 .then(function (response) {

@@ -8,7 +8,7 @@ var urlParams = new URLSearchParams(queryString);
 var authorParam = urlParams.get('author');
 var favBooksList = JSON.parse(localStorage.getItem("favorite-list")) || [];
 
-var authorURL = "http://gutendex.com/books/?search=" + authorParam;
+var authorURL = "https://gutendex.com/books/?search=" + authorParam;
 
 fetch(authorURL)
 .then(function (response) {

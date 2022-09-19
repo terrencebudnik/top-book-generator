@@ -10,7 +10,7 @@ var genreParam = urlParams.get('genre');
 var favBooksList = JSON.parse(localStorage.getItem("favorite-list")) || [];
 
 
-var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
+var genreURL = "https://gutendex.com/books/?topic=" + genreParam;
 
 fetch(genreURL)
     .then(function (response) {
