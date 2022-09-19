@@ -10,7 +10,6 @@ To use our website, simply search a genre or familiar author name to access an a
 ![](Assets/Images/homepage2.png)
 ![](Assets/Images/favorites.png)
 ![](Assets/Images/read%20now.png)
-![](Assets/Images/read%20now.png)
 
 ## Credits
 Project Gutenberg - https://www.gutenberg.org/
