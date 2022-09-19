@@ -10,7 +10,7 @@ var genreParam = urlParams.get('genre');
 var favBooksList = JSON.parse(localStorage.getItem("favorite-list")) || [];
 
 
-var genreURL = "http://gutendex.com/books/?topic=" + genreParam;
+var genreURL = "https://gutendex.com/books/?topic=" + genreParam;
 
 fetch(genreURL)
     .then(function (response) {
@@ -35,7 +35,7 @@ fetch(genreURL)
 
         var bookBodyEl = $('<p>');
         bookBodyEl.attr('class', 'card-content');
-        bookBodyEl.text(data.results[i].authors[0].name)
+        bookBodyEl.text("by: " + data.results[i].authors[0].name)
         bookTitleEl.append(bookBodyEl);
 
         var bookReadbtn = $('<a>');
