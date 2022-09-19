@@ -9,3 +9,21 @@ body {
 main {
     flex: 1 0 auto;
   }
+
+  nav, .page-footer {
+    background-color: #a6192e;
+  }
+
+  .bg {
+    /* The image used */
+    background-image: url(../Images/Books.jpeg);
+  
+    /* Full height */
+    height: 100%; 
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
