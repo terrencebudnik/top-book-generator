@@ -1,11 +1,4 @@
 
-body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-image: url(Bookshelf-dark.jpg);
-  }
-
 main {
     flex: 1 0 auto;
   }
@@ -14,16 +7,15 @@ main {
     background-color: #a6192e;
   }
 
-  .bg {
-    /* The image used */
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
     background-image: url(../Images/Books.jpeg);
-  
-    /* Full height */
-    height: 100%; 
-  
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    font-family: Dancing Script, cursive;
   }
-  
+
+  .section {
+    color: white;
+    font-weight: bold;
+  }
