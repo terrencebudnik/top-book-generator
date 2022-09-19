@@ -8,7 +8,7 @@ var urlParams = new URLSearchParams(queryString);
 var authorParam = urlParams.get('author');
 var favBooksList = JSON.parse(localStorage.getItem("favorite-list")) || [];
 
-var authorURL = "http://gutendex.com/books/?search=" + authorParam;
+var authorURL = "https://gutendex.com/books/?search=" + authorParam;
 
 fetch(authorURL)
 .then(function (response) {
@@ -25,7 +25,7 @@ fetch(authorURL)
     var id = data.results[i].id
 
     
-    var bookTitleEl = $('<h2>');
+    var bookTitleEl = $('<h2 style="color:black">');
     bookTitleEl.attr('class', 'card-title');
     bookTitleEl.text(data.results[i].title);
     bookCardEl.append(bookTitleEl);
@@ -36,7 +36,7 @@ fetch(authorURL)
     bookBodyEl.text(data.results[i].authors[0].name)
     bookTitleEl.append(bookBodyEl);
 
-    var bookReadbtn = $('<a>');
+    var bookReadbtn = $('<a style="color:black">');
     bookReadbtn.attr('href', "https://www.gutenberg.org/files/" + id + "/" + id + "-h/" + id + "-h.htm");
     bookReadbtn.attr('target', 'blank')
     bookReadbtn.text("Read it Now!")
