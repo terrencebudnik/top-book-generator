@@ -1,40 +1,89 @@
- h1 {
-   background-color: black;
+h1 {
+  background-color: black;
 
- }
+}
 
- body {
-   display: flex;
-   min-height: 100vh;
-   flex-direction: column;
-   background-image: url(../Images/Books.jpeg);
-   font-family: Dancing Script, cursive;
- 
- }
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url(../Images/Books.jpeg);
+  font-family: Dancing Script, cursive;
 
- main {
-   flex: 1 0 auto;
- }
+}
 
-
- body,
- html {
-   height: 100%;
-   margin: 0;
- }
+main {
+  flex: 1 0 auto;
+}
 
 
- #welcome-box {
-   color: white;
- }
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
 
- nav,
- .page-footer {
-   background-color: #a6192e;
- }
 
- /* .card {
-   color: #888F86;
- }
+#welcome-box {
+  color: #7f0c1d;
+  background-image: url(../Images/display-book-bg.jpg);
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+  border-radius: 25px !important;
+  margin-top: 1rem;
+  
+}
 
- 
+
+nav,
+.page-footer {
+  background-color: #7f0c1d;
+}
+
+#search{
+  background-image: url(../Images/display-book-bg.jpg) !important;
+  border-radius: 25px !important;
+  border-color: #7f0c1d !important;
+}
+
+#searchbtn {
+ background-color: #7f0c1d !important;
+}
+
+#searchTextTitle {
+ color: #7f0c1d;
+ font-size: xx-large;
+}
+
+#searchText {
+ color: #7f0c1d;
+ font-size:larger;
+}
+
+#userInput {
+ border-bottom: 1px solid #7f0c1d !important;
+ border-radius: 0 !important;
+ height: 3rem;
+ width: 100%;
+ font-size: 16px;
+ margin: 0 0 8px 0;
+ padding: 0;
+}
+
+#fav-list {
+  border-radius: 25px !important;
+  border-color: #7f0c1d !important;
+  color: #7f0c1d;
+  font-size: xx-large;
+}
+
+a {
+  background-color: #7f0c1d !important;
+  color:white !important;
+}
+
+.favorite-button {
+  background-color: #7f0c1d !important;
+}
+
