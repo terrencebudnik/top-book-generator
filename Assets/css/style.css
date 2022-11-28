@@ -55,5 +55,20 @@ nav,
 
 #userInput {
  border-bottom: 1px solid #7f0c1d !important;
+}
 
+#fav-list {
+  border-radius: 25px !important;
+  border-color: #7f0c1d !important;
+  color: #7f0c1d;
+  font-size: xx-large;
+}
+
+a {
+  background-color: #7f0c1d !important;
+  color:white !important;
+}
+
+.favorite-button {
+  background-color: #7f0c1d !important;
 }
